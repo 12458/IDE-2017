@@ -1,0 +1,386 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:battery-cr2032
+LIBS:Carlolib-disc
+LIBS:cr2032
+LIBS:dc-dc
+LIBS:Dispositivos_I2C
+LIBS:freetronics_schematic
+LIBS:hc-05
+LIBS:hc-05_breakout
+LIBS:nRF24L01+
+LIBS:oled
+LIBS:open-project
+LIBS:TLC5940
+LIBS:VIN
+LIBS:w_relay
+LIBS:NRF_receiver-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Arduino IDE 2017 NRF Receiver"
+Date "2017-03-10"
+Rev "1.0.0"
+Comp "Done by Sim Shang En"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L ARDUINO_SHIELD SHIELD?
+U 1 1 58C13D72
+P 2650 2550
+F 0 "SHIELD?" H 2200 3700 60  0001 C CNN
+F 1 "ARDUINO Uno" H 2700 1600 60  0000 C CNN
+F 2 "FT:ARDUINO_SHIELD" H 2650 2350 50  0001 C CNN
+F 3 "" H 2650 2550 60  0000 C CNN
+	1    2650 2550
+	1    0    0    -1  
+$EndComp
+Text Label 3600 3150 0    60   ~ 0
+Relay
+Text Label 3600 3050 0    60   ~ 0
+Buzzer
+Text Label 3600 2950 0    60   ~ 0
+Mute
+Text Label 1700 2150 2    60   ~ 0
+Reset
+$Comp
+L +3.3V #PWR?
+U 1 1 58C13F98
+P 1350 2250
+F 0 "#PWR?" H 1350 2100 50  0001 C CNN
+F 1 "+3.3V" H 1350 2390 50  0000 C CNN
+F 2 "" H 1350 2250 50  0000 C CNN
+F 3 "" H 1350 2250 50  0000 C CNN
+	1    1350 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 2250 1700 2250
+$Comp
+L GND #PWR?
+U 1 1 58C13FB1
+P 1450 2450
+F 0 "#PWR?" H 1450 2200 50  0001 C CNN
+F 1 "GND" H 1450 2300 50  0000 C CNN
+F 2 "" H 1450 2450 50  0000 C CNN
+F 3 "" H 1450 2450 50  0000 C CNN
+	1    1450 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1450 2450 1700 2450
+$Comp
+L nRF24L01+ U?
+U 1 1 58C14036
+P 5600 1850
+F 0 "U?" H 5600 1550 50  0000 C CNN
+F 1 "nRF24L01+" H 5600 2150 50  0000 C CNN
+F 2 "MODULE" H 5600 1950 50  0001 C CNN
+F 3 "DOCUMENTATION" H 5600 1800 50  0001 C CNN
+	1    5600 1850
+	1    0    0    -1  
+$EndComp
+Text Label 3600 1950 0    60   ~ 0
+SCK
+Text Label 3600 2050 0    60   ~ 0
+MISO
+Text Label 3600 2150 0    60   ~ 0
+MOSI
+Text Label 3600 2450 0    60   ~ 0
+SS
+Text Label 3600 2650 0    60   ~ 0
+CE
+Text Label 4850 2100 2    60   ~ 0
+SS
+Text Label 4850 1950 2    60   ~ 0
+CE
+Text Label 6350 1800 0    60   ~ 0
+MOSI
+Text Label 6350 1950 0    60   ~ 0
+MISO
+Text Label 6350 1650 0    60   ~ 0
+SCK
+$Comp
+L GND #PWR?
+U 1 1 58C1410C
+P 4850 1650
+F 0 "#PWR?" H 4850 1400 50  0001 C CNN
+F 1 "GND" H 4850 1500 50  0000 C CNN
+F 2 "" H 4850 1650 50  0000 C CNN
+F 3 "" H 4850 1650 50  0000 C CNN
+	1    4850 1650
+	-1   0    0    1   
+$EndComp
+$Comp
+L +3.3V #PWR?
+U 1 1 58C14124
+P 4650 1800
+F 0 "#PWR?" H 4650 1650 50  0001 C CNN
+F 1 "+3.3V" H 4650 1940 50  0000 C CNN
+F 2 "" H 4650 1800 50  0000 C CNN
+F 3 "" H 4650 1800 50  0000 C CNN
+	1    4650 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4650 1800 4850 1800
+$Comp
+L SW_PUSHBUTTON SW?
+U 1 1 58C237BA
+P 9950 2000
+F 0 "SW?" H 9800 2110 50  0001 C CNN
+F 1 "Mute" H 9950 1920 50  0000 C CNN
+F 2 "" H 9950 2000 60  0000 C CNN
+F 3 "" H 9950 2000 60  0000 C CNN
+	1    9950 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSHBUTTON SW?
+U 1 1 58C237D6
+P 9950 2400
+F 0 "SW?" H 9800 2510 50  0001 C CNN
+F 1 "RST" H 9950 2320 50  0000 C CNN
+F 2 "" H 9950 2400 60  0000 C CNN
+F 3 "" H 9950 2400 60  0000 C CNN
+	1    9950 2400
+	1    0    0    -1  
+$EndComp
+Text Label 9650 2000 2    60   ~ 0
+Mute
+Text Label 9650 2400 2    60   ~ 0
+Reset
+$Comp
+L GND #PWR?
+U 1 1 58C23956
+P 10250 2000
+F 0 "#PWR?" H 10250 1750 50  0001 C CNN
+F 1 "GND" H 10250 1850 50  0000 C CNN
+F 2 "" H 10250 2000 50  0000 C CNN
+F 3 "" H 10250 2000 50  0000 C CNN
+	1    10250 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58C2396D
+P 10250 2400
+F 0 "#PWR?" H 10250 2150 50  0001 C CNN
+F 1 "GND" H 10250 2250 50  0000 C CNN
+F 2 "" H 10250 2400 50  0000 C CNN
+F 3 "" H 10250 2400 50  0000 C CNN
+	1    10250 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L RELAY_34.51 RLY?
+U 1 1 58C239F0
+P 6600 4650
+F 0 "RLY?" H 6600 4900 60  0001 C CNN
+F 1 "Relay" H 6600 4415 60  0000 C CNN
+F 2 "" H 6600 4650 60  0000 C CNN
+F 3 "" H 6600 4650 60  0000 C CNN
+	1    6600 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D?
+U 1 1 58C23B46
+P 9750 1400
+F 0 "D?" H 9750 1500 50  0000 C CNN
+F 1 "LED" H 9750 1300 50  0000 C CNN
+F 2 "" H 9750 1400 50  0000 C CNN
+F 3 "" H 9750 1400 50  0000 C CNN
+	1    9750 1400
+	1    0    0    -1  
+$EndComp
+Text Label 10200 1400 0    60   ~ 0
+Relay
+$Comp
+L R R?
+U 1 1 58C23CCF
+P 10050 1400
+F 0 "R?" V 10130 1400 50  0001 C CNN
+F 1 "220Ω" V 10050 1400 50  0000 C CNN
+F 2 "" V 9980 1400 50  0000 C CNN
+F 3 "" H 10050 1400 50  0000 C CNN
+	1    10050 1400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58C23D0C
+P 9450 1400
+F 0 "#PWR?" H 9450 1150 50  0001 C CNN
+F 1 "GND" H 9450 1250 50  0000 C CNN
+F 2 "" H 9450 1400 50  0000 C CNN
+F 3 "" H 9450 1400 50  0000 C CNN
+	1    9450 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9450 1400 9600 1400
+$Comp
+L TRANSISTOR_NPN Q?
+U 1 1 58C23DB1
+P 6300 4000
+F 0 "Q?" H 6300 4150 50  0001 R CNN
+F 1 "2N222" H 6350 3800 50  0000 R CNN
+F 2 "" H 6300 4000 60  0000 C CNN
+F 3 "" H 6300 4000 60  0000 C CNN
+	1    6300 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR?
+U 1 1 58C23F34
+P 6400 3800
+F 0 "#PWR?" H 6400 3650 50  0001 C CNN
+F 1 "VCC" H 6400 3950 50  0000 C CNN
+F 2 "" H 6400 3800 50  0000 C CNN
+F 3 "" H 6400 3800 50  0000 C CNN
+	1    6400 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR?
+U 1 1 58C24029
+P 1100 2350
+F 0 "#PWR?" H 1100 2200 50  0001 C CNN
+F 1 "VCC" H 1100 2500 50  0000 C CNN
+F 2 "" H 1100 2350 50  0000 C CNN
+F 3 "" H 1100 2350 50  0000 C CNN
+	1    1100 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1100 2350 1700 2350
+$Comp
+L DIODE D?
+U 1 1 58C241D7
+P 6600 4300
+F 0 "D?" H 6600 4400 40  0001 C CNN
+F 1 "0.7V" H 6600 4200 40  0000 C CNN
+F 2 "" H 6600 4300 60  0000 C CNN
+F 3 "" H 6600 4300 60  0000 C CNN
+	1    6600 4300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6400 4200 6400 4500
+Connection ~ 6400 4300
+Wire Wire Line
+	6800 4300 6800 4500
+$Comp
+L GND #PWR?
+U 1 1 58C24260
+P 7100 4500
+F 0 "#PWR?" H 7100 4250 50  0001 C CNN
+F 1 "GND" H 7100 4350 50  0000 C CNN
+F 2 "" H 7100 4500 50  0000 C CNN
+F 3 "" H 7100 4500 50  0000 C CNN
+	1    7100 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 4500 7100 4500
+$Comp
+L Screw_Terminal_1x02 J?
+U 1 1 58C243A7
+P 6650 5350
+F 0 "J?" H 6650 5600 50  0001 C TNN
+F 1 "Screw_Terminal_1x02" V 6500 5350 50  0000 C TNN
+F 2 "" H 6650 5125 50  0001 C CNN
+F 3 "" H 6625 5350 50  0001 C CNN
+	1    6650 5350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6400 4750 6400 5150
+Wire Wire Line
+	6400 5150 6550 5150
+Wire Wire Line
+	6800 4800 6800 5150
+Wire Wire Line
+	6800 5150 6750 5150
+$Comp
+L R R?
+U 1 1 58C2467D
+P 5950 4000
+F 0 "R?" V 6030 4000 50  0001 C CNN
+F 1 "1K" V 5950 4000 50  0000 C CNN
+F 2 "" V 5880 4000 50  0000 C CNN
+F 3 "" H 5950 4000 50  0000 C CNN
+	1    5950 4000
+	0    -1   -1   0   
+$EndComp
+Text Label 5800 4000 2    60   ~ 0
+Relay
+$Comp
+L Buzzer BZ?
+U 1 1 58C24E30
+P 10200 2900
+F 0 "BZ?" H 10350 2950 50  0001 L CNN
+F 1 "Buzzer" H 10350 2850 50  0000 L CNN
+F 2 "" V 10175 3000 50  0000 C CNN
+F 3 "" V 10175 3000 50  0000 C CNN
+	1    10200 2900
+	1    0    0    -1  
+$EndComp
+Text Label 10100 2800 2    60   ~ 0
+Buzzer
+$Comp
+L GND #PWR?
+U 1 1 58C25111
+P 10100 3000
+F 0 "#PWR?" H 10100 2750 50  0001 C CNN
+F 1 "GND" H 10100 2850 50  0000 C CNN
+F 2 "" H 10100 3000 50  0000 C CNN
+F 3 "" H 10100 3000 50  0000 C CNN
+	1    10100 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9200 1200 9200 3300
+Wire Wire Line
+	9200 3300 10700 3300
+Wire Wire Line
+	10700 3300 10700 1200
+Wire Wire Line
+	10700 1200 9200 1200
+Text Notes 9650 3450 0    60   ~ 12
+Human Interface
+$EndSCHEMATC
